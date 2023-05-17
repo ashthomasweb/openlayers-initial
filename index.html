@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+  <script src="https://openlayers.org/en/v6.6.1/build/ol.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using OpenLayers with Vite</title>
+</head>
+
+<body>
+  <div id="map">
+    <div id="coord-box">
+      <label style="padding: 4px">
+        Longitude<br><input id="lonInput" type="text" />
+      </label>
+      <input id="lonW" onclick="lonW()" type="checkbox" checked>W</input>
+      <input id="lonE" onclick="lonE()" type="checkbox">E</input>
+      <br>
+      <label style="padding: 4px">
+        Latitude<br><input id="latInput" type="text" />
+      </label>
+      <input id="latN" onclick="latN()" type="checkbox" checked>N</input>
+      <input id="latS" onclick="latS()" type="checkbox">S</input>
+    </div>
+  </div>
+  <script type="module" src="./main.js"></script>
+  <script>
+    function lonW() {
+      document.getElementById('lonE').checked = false
+    }
+    function lonE() {
+      document.getElementById('lonW').checked = false
+    }
+    function latN() {
+      document.getElementById('latS').checked = false
+    }
+    function latS() {
+      document.getElementById('latN').checked = false
+    }
+  </script>
+</body>
+
+</html>
